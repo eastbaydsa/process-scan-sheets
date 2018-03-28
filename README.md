@@ -1,6 +1,6 @@
 # Scan Sheet Processing
 
-NationBuilder requires that scan sheets be uploaded as [300 DPI monochrome TIFF images](https://nationbuilder.com/how_to_use_scannable_sheets#scan). This repo includes a script that processes images into a format that can be uploaded to NationBuilder.
+NationBuilder requires that scan sheets be uploaded as [300 dpi monochrome TIFF images](https://nationbuilder.com/how_to_use_scannable_sheets#scan). This repo includes a script that processes images into this format.
 
 1. Create a new directory in this directory names `input`
 2. Add raw images to `input` directory
