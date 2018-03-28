@@ -12,7 +12,7 @@ mkdir -p output
 
 # process each image in `input` directory
 for filepath in ./input/*; do
-    filename=$(basename "$filepath")
-    filename="${filename%.*}"
-    convert -monochrome -strip -interlace Plane -gaussian-blur 0.05 -quality 85% -depth 1 -density 300 "$filepath" "output/$filename.tiff"
+	filename=$(basename "$filepath")
+	filename="${filename%.*}"
+	convert -monochrome -strip -interlace Plane -gaussian-blur 0.05 -quality 85% -depth 1 -density 300 "$filepath" "output/$filename.tiff"
 done
