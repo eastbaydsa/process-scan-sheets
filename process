@@ -1,14 +1,18 @@
 #!/usr/bin/env bash
 
 # install Homebrew if not installed
-install_homebrew() {
-    command -v brew >/dev/null 2>&1 || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-}
+command -v brew >/dev/null 2>&1 || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # install Imagemagick if not installed
-install_imagemagick() {
-    install_homebrew
-    command -v convert >/dev/null 2>&1 || brew install imagemagick
-}
+command -v convert >/dev/null 2>&1 || brew install imagemagick
 
-install_imagemagick
+# create clean output folder
+rm -rf output
+mkdir -p output
+
+# process each image in `input` directory
+for filepath in ./input/*; do
+    filename=$(basename "$filepath")
+    filename="${filename%.*}"
+    convert -monochrome -strip -interlace Plane -gaussian-blur 0.05 -quality 85% -depth 1 -density 300 "$filepath" "output/$filename.tiff"
+done
