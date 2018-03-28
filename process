@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # trap interrupts and exit instead of continuing the loop
-trap "printf \"\n\n\xE2\x9C\x96 Exited!\"; exit;" SIGINT SIGTERM
+trap "printf \"\n\n\xE2\x9C\x96 Exited!\n\"; exit;" SIGINT SIGTERM
 
 # install Homebrew if not installed
 command -v brew >/dev/null 2>&1 || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -26,4 +26,4 @@ done
 count_output_files() {
 	ls -1q output/* | wc -l | tr -d '[:space:]'
 }
-printf "\n\xE2\x9C\x94 Successfully processed $(count_output_files) images."
+printf "\n\xE2\x9C\x94 Successfully processed $(count_output_files) images.\n"
