@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# install Homebrew if not installed
+install_homebrew() {
+    command -v brew >/dev/null 2>&1 || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+}
+
+# install Imagemagick if not installed
+install_imagemagick() {
+    install_homebrew
+    command -v convert >/dev/null 2>&1 || brew install imagemagick
+}
+
+install_imagemagick
