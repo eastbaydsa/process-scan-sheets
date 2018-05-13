@@ -18,7 +18,7 @@ for filepath in ./input/*; do
 	filename=$(basename "$filepath")
 	filename="${filename%.*}"
 	printf "Processing $filename..."
-	convert -monochrome -strip -interlace Plane -gaussian-blur 0.05 -quality 85% -depth 1 -units PixelsPerInch -density 300 "$filepath" "output/$filename.tiff"
+	convert -monochrome -depth 1 -units PixelsPerInch -density 300 "$filepath" "output/$filename.tiff"
 	printf "\tDone!\n"
 done
 
