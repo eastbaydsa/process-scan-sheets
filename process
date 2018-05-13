@@ -7,7 +7,7 @@ trap "printf \"\n\n\xE2\x9C\x96 Exited!\n\"; exit;" SIGINT SIGTERM
 command -v brew >/dev/null 2>&1 || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # install Imagemagick if not installed
-command -v convert >/dev/null 2>&1 || brew install imagemagick
+command -v convert >/dev/null 2>&1 || brew install imagemagick ghostscript
 
 # create clean output folder
 rm -rf output

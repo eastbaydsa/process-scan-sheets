@@ -10,6 +10,6 @@ Notes:
 
 * Only macOS is supported
 * This script will install Homebrew and Imagemagick on your computer if you don't already have them
-* Any image format is accepted (ex: JPG, TIFF, PNG) but _not_ PDF
+* Any image format or PDF is accepted (ex: JPG, TIFF, PNG, PDF)
 * The `input` directory does not support nested directories
 * The `output` directory is cleaned every time `process` is run
