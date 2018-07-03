@@ -18,7 +18,8 @@ for filepath in ./input/*; do
 	filename=$(basename "$filepath")
 	filename="${filename%.*}"
 	printf "Processing $filename..."
-	convert -monochrome -depth 1 -units PixelsPerInch -density 300 "$filepath" "output/$filename.tiff"
+	convert -colorspace gray -density 300 -units 1 -compress jpeg "$filepath" miff:- | \
+	convert - -monochrome -depth 1 -units PixelsPerInch -density 300 "output/$filename.tiff"
 	printf "\tDone!\n"
 done
 
